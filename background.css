@@ -1,0 +1,64 @@
+/* Set a solid color background */
+body {
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+/* Set a background image */
+.bg-image {
+    background-image: url('background.jpg'); /* Replace with your image URL */
+    background-size: cover; /* Cover entire screen */
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 300px; /* Example height */
+    text-align: center;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Background with gradient */
+.bg-gradient {
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    padding: 20px;
+    text-align: center;
+    color: white;
+    font-size: 18px;
+}
+
+/* Borders for different elements */
+.border-solid {
+    border: 3px solid black;
+    padding: 10px;
+}
+
+.border-dotted {
+    border: 3px dotted red;
+    padding: 10px;
+}
+
+.border-dashed {
+    border: 3px dashed blue;
+    padding: 10px;
+}
+
+.border-double {
+    border: 5px double green;
+    padding: 10px;
+}
+
+.border-groove {
+    border: 5px groove purple;
+    padding: 10px;
+}
+
+/* Adding rounded corners */
+.border-rounded {
+    border: 3px solid black;
+    border-radius: 10px;
+    padding: 10px;
+}
