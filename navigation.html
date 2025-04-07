@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Navigation & Overflow Examples</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    /* Navigation Styles */
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .horizontal-menu ul {
+      display: flex;
+      gap: 20px;
+      background: #eee;
+      padding: 10px;
+    }
+
+    .vertical-menu ul {
+      background: #eee;
+      padding: 10px;
+      width: 200px;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    /* Responsive Menu */
+    .hamburger {
+      display: none;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    .responsive-menu {
+      display: flex;
+      gap: 20px;
+    }
+
+    @media (max-width: 600px) {
+      .responsive-menu {
+        display: none;
+        flex-direction: column;
+        background: #eee;
+        padding: 10px;
+      }
+      .responsive-menu.active {
+        display: flex;
+      }
+      .hamburger {
+        display: block;
+      }
+    }
+
+    /* Overflow Examples */
+    .container-scroll {
+      width: 300px;
+      height: 150px;
+      overflow: scroll;
+      background: #f0f0f0;
+      padding: 10px;
+      margin-top: 10px;
+    }
+
+    .text-overflow {
+      width: 200px;
+      height: 50px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      border: 1px solid #ccc;
+      padding: 5px;
+      margin-top: 10px;
+    }
+
+    .image-container {
+      width: 200px;
+      height: 150px;
+      overflow: hidden;
+      border: 1px solid #ccc;
+      margin-top: 10px;
+    }
+
+    .image-container img {
+      width: 100%;
+    }
+
+    .scroll-dropdown {
+      width: 200px;
+      height: 100px;
+      overflow-y: scroll;
+      background: #f9f9f9;
+      border: 1px solid #ccc;
+      margin-top: 10px;
+    }
+
+    h2 {
+      margin-top: 40px;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Horizontal Navigation Menu</h2>
+  <nav class="horizontal-menu">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <h2>Vertical Navigation Menu</h2>
+  <nav class="vertical-menu">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <h2>Dropdown Menu</h2>
+  <div class="dropdown">
+    <button>Menu</button>
+    <div class="dropdown-content">
+      <a href="#">Submenu 1</a><br>
+      <a href="#">Submenu 2</a><br>
+      <a href="#">Submenu 3</a>
+    </div>
+  </div>
+
+  <h2>Responsive Navigation Menu</h2>
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
+  <nav class="responsive-menu">
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Contact</a>
+  </nav>
+
+  <h2>Overflow in a Container</h2>
+  <div class="container-scroll">
+    <p>This is a lot of content inside a container with fixed dimensions. You can scroll to view the hidden parts.</p>
+    <p>More content here...</p>
+    <p>Even more content...</p>
+    <p>Yep, still more!</p>
+  </div>
+
+  <h2>Overflow in a Text Block</h2>
+  <div class="text-overflow">
+    This is a long piece of text that will overflow and get cut off with an ellipsis.
+  </div>
+
+  <h2>Overflow in an Image</h2>
+  <div class="image-container">
+    <img src="download.jfif" alt="Overflow Image">
+  </div>
+
+  <h2>Overflow in a Dropdown Menu</h2>
+  <div class="scroll-dropdown">
+    <a href="#">Option 1</a><br>
+    <a href="#">Option 2</a><br>
+    <a href="#">Option 3</a><br>
+    <a href="#">Option 4</a><br>
+    <a href="#">Option 5</a><br>
+    <a href="#">Option 6</a><br>
+    <a href="#">Option 7</a><br>
+    <a href="#">Option 8</a><br>
+    <a href="#">Option 9</a>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      document.querySelector('.responsive-menu').classList.toggle('active');
+    }
+  </script>
+</body>
+</html>
